@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/AppDevelop/Practice Project/Wallpaper/app/src/main/res/drawable/image_back.xml" value="0.129" />
+        <entry key="..\:/AppDevelop/Practice Project/Wallpaper/app/src/main/res/drawable/item_back.xml" value="0.134" />
+        <entry key="..\:/AppDevelop/Practice Project/Wallpaper/app/src/main/res/drawable/item_ripple.xml" value="0.134" />
+        <entry key="..\:/AppDevelop/Practice Project/Wallpaper/app/src/main/res/drawable/layout_back.xml" value="0.129" />
+        <entry key="..\:/AppDevelop/Practice Project/Wallpaper/app/src/main/res/layout/activity_main.xml" value="0.1859375" />
+        <entry key="..\:/AppDevelop/Practice Project/Wallpaper/app/src/main/res/layout/activity_set_wallpaper.xml" value="0.1859375" />
+        <entry key="..\:/AppDevelop/Practice Project/Wallpaper/app/src/main/res/layout/item_wallpaper.xml" value="0.2" />
+        <entry key="..\:/AppDevelop/Practice Project/Wallpaper/app/src/main/res/layout/select_screen_layout.xml" value="0.20416666666666666" />
+        <entry key="..\:/AppDevelop/Practice Project/Wallpaper/app/src/main/res/layout/shimmer_layout.xml" value="0.20416666666666666" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

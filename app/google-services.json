@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "1051402503364",
+    "firebase_url": "https://wallpaper-f7f63-default-rtdb.firebaseio.com",
+    "project_id": "wallpaper-f7f63",
+    "storage_bucket": "wallpaper-f7f63.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1051402503364:android:396f2ccd19643db2f2b591",
+        "android_client_info": {
+          "package_name": "com.practice.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1051402503364-nahcrdmplbdudb926bh6779l29o1oeps.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCpYI8YYFtWghk619X6Ie5igATAHb185BQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1051402503364-nahcrdmplbdudb926bh6779l29o1oeps.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1051402503364:android:26b7a082cca02d52f2b591",
+        "android_client_info": {
+          "package_name": "com.practice.wallpaper"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1051402503364-nahcrdmplbdudb926bh6779l29o1oeps.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCpYI8YYFtWghk619X6Ie5igATAHb185BQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1051402503364-nahcrdmplbdudb926bh6779l29o1oeps.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/background"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:paddingStart="5dp"
+        android:textColor="@color/white"
+        android:layout_margin="20dp"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:text="Select Screen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+    <LinearLayout
+        android:background="@drawable/item_ripple"
+        android:id="@+id/homeScreen"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <TextView
+            android:textColor="@color/white"
+            android:layout_marginStart="25dp"
+            android:layout_gravity="center_vertical"
+            android:textSize="18sp"
+            android:text="Homescreen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:background="@drawable/item_ripple"
+        android:id="@+id/lockScreen"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <TextView
+            android:textColor="@color/white"
+            android:layout_marginStart="25dp"
+            android:layout_gravity="center_vertical"
+            android:textSize="18sp"
+            android:text="Lockscreen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:background="@drawable/item_ripple"
+        android:id="@+id/bothScreen"
+        android:layout_marginBottom="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <TextView
+            android:textColor="@color/white"
+            android:layout_marginStart="25dp"
+            android:layout_gravity="center_vertical"
+            android:textSize="18sp"
+            android:text="Both"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>
