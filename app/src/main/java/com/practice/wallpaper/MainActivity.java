@@ -3,7 +3,11 @@ package com.practice.wallpaper;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -17,8 +21,8 @@ import com.practice.wallpaper.databinding.ActivityMainBinding;
 import com.practice.wallpaper.model.WallpaperModel;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
-import okhttp3.internal.http2.Header;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -44,12 +48,64 @@ public class MainActivity extends AppCompatActivity {
             public void run() {
 
                 binding.shimmerLayout.stopShimmerAnimation();
-                binding.shimmerLayout.setVisibility(View.GONE);
-                binding.recyclerView.setVisibility(View.VISIBLE);
+                binding.shimmerSwipeLayout.setVisibility(View.GONE);
+                binding.linearLayout.setVisibility(View.VISIBLE);
+
+                /** Check Internet conn */
+                if (!isConnected()){
+                    binding.shimmerLayout.startShimmerAnimation();
+                    binding.shimmerSwipeLayout.setVisibility(View.VISIBLE);
+                    binding.linearLayout.setVisibility(View.GONE);
+                }
 
             }
         },2000);
 
+
+        showItemInRecyclerView();
+
+        binding.swipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+
+                showItemInRecyclerView();
+                binding.swipeRefresh.setRefreshing(false);
+            }
+        });
+
+
+
+        binding.internetSwipe.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+
+                if (isConnected()){
+
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            binding.shimmerSwipeLayout.setVisibility(View.GONE);
+                            binding.linearLayout.setVisibility(View.VISIBLE);
+                            binding.internetSwipe.setRefreshing(false);
+                        }
+                    },2000);
+
+
+                }
+                else {
+                    binding.internetSwipe.setRefreshing(false);
+                    return;
+                }
+
+
+
+            }
+        });
+
+    }
+
+
+    private void showItemInRecyclerView(){
 
         /** Recycler View */
         adapter = new WallpaperAdapter(this,arrayList);
@@ -60,6 +116,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
+
                 arrayList.clear();
 
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()){
@@ -69,6 +126,7 @@ public class MainActivity extends AppCompatActivity {
                     arrayList.add(model);
                 }
                 adapter.notifyDataSetChanged();
+                Collections.shuffle(arrayList);
             }
 
             @Override
@@ -76,6 +134,27 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+
+    /** Check Internet connection */
+    public boolean isConnected(){
+
+        ConnectivityManager connectivityManager = (ConnectivityManager) this.getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        NetworkInfo wifiConn = connectivityManager.getNetworkInfo(connectivityManager.TYPE_WIFI);
+        NetworkInfo mobileConn = connectivityManager.getNetworkInfo(connectivityManager.TYPE_MOBILE);
+
+        if ((wifiConn != null && wifiConn.isConnected()) || (mobileConn != null && mobileConn.isConnected())){
+
+            return true;
+        }
+        else {
+            return false;
+        }
 
     }
+
+
+
 }
